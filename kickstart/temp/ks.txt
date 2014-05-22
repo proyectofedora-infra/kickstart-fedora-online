@@ -1,0 +1,326 @@
+3D Printing (3d-printing
+Additional Sugar Activities (sugar-apps
+Administration Tools (admin-tools
+Anaconda tools (anaconda-tools
+Applications for the LXDE Desktop (lxde-apps
+Applications for the Xfce Desktop (xfce-apps
+Arabic Support (arabic-support
+Assamese Support (assamese-support
+Authoring and Publishing (authoring-and-publishing
+Basic Desktop (basic-desktop
+Basic Web Server (web-server
+Bengali Support (bengali-support
+Bhutanese Support (bhutanese-support
+Bodo Support (bodo-support
+Books and Guides (books
+Buildsystem building group (buildsys-build
+C Development Tools and Libraries (c-development
+Cinnamon (cinnamon-desktop
+Cloud Infrastructure (cloud-infrastructure
+Core (core
+Critical Path (Applications) (critical-path-apps
+Critical Path (Base) (critical-path-base
+Critical Path (GNOME) (critical-path-gnome
+Critical Path (KDE) (critical-path-kde
+Critical Path (LXDE) (critical-path-lxde
+Critical Path (Xfce) (critical-path-xfce
+D Development Tools and Libraries (d-development
+DNS Name Server (dns-server
+Design Suite (design-suite
+Development Libraries (development-libs
+Development Tools (development-tools
+Dial-up Networking Support (dial-up
+Directory Server (directory-server
+Dogri Support (dogri-support
+Dogtag Certificate System (dogtag
+Editors (editors
+Educational Software (education
+Electronic Lab (electronic-lab
+Engineering and Scientific (engineering-and-scientific
+Epiphany Web Browser (epiphany
+Ethiopic Support (ethiopic-support
+Extra games for the GNOME Desktop (gnome-games
+Extra plugins for the Xfce panel (xfce-extra-plugins
+FTP Server (ftp-server
+Fedora Eclipse (eclipse
+Fedora Packager (fedora-packager
+Finnish Support (finnish-support
+Firefox Web Browser (firefox
+Font design and packaging (font-design
+Fonts (fonts
+FreeIPA Server (freeipa-server
+GNOME (gnome-desktop
+GNOME Software Development (gnome-software-development
+Games and Entertainment (games
+Georgian Support (georgian-support
+Graphical Internet (graphical-internet
+Graphics (graphics
+Greek Support (greek-support
+Guest Agents (guest-agents
+Guest Desktop Agents (guest-desktop-agents
+Gujarati Support (gujarati-support
+HAProxy (haproxy
+Hardware Support (hardware-support
+Haskell (haskell
+Hebrew Support (hebrew-support
+High Availability (ha
+Hindi Support (hindi-support
+Input Methods (input-methods
+JBoss Application Server (jbossas
+Japanese Support (japanese-support
+Java (java
+Java Development (java-development
+KDE (kde-desktop
+KDE Applications (kde-apps
+KDE Educational applications (kde-education
+KDE Multimedia support (kde-media
+KDE Office (kde-office
+KDE Software Development (kde-software-development
+KDE Telepathy (kde-telepathy
+Kannada Support (kannada-support
+Kashmiri Support (kashmiri-support
+Khmer Support (khmer-support
+Konkani Support (konkani-support
+Korean Support (korean-support
+Kurdish Support (kurdish-support
+LXDE (lxde-desktop
+LXDE Office (lxde-office
+Legacy Fonts (legacy-fonts
+Legacy Network Server (legacy-network-server
+Legacy Software Development (legacy-software-development
+Legacy Software Support (legacy-software-support
+Lepcha Support (lepcha-support
+LibreOffice (libreoffice
+LibreOffice Development (libreoffice-development
+Load Balancer (load-balancer
+MATE (mate-desktop
+MATE Applications (mate-applications
+Mail Server (mail-server
+Maithili Support (maithili-support
+Malayalam Support (malayalam-support
+Manipuri Support (manipuri-support
+Marathi Support (marathi-support
+MariaDB (MySQL) Database (mysql
+Medical Applications (medical
+Milkymist (milkymist
+MinGW cross-compiler (mingw32
+MongoDB (mongodb
+Multimedia (multimedia
+Multimedia support for LXDE (lxde-media
+Multimedia support for Xfce (xfce-media
+Myanmar (Burmese) Support (burmese-support
+Nepali Support (nepali-support
+Network Servers (network-server
+News Server (news-server
+OCaml (ocaml
+Office/Productivity (office
+Online Help and Documentation (online-docs
+Oriya Support (oriya-support
+PHP (php
+Perl Development (perl
+Perl for Web (perl-web
+Persian Support (persian-support
+PostgreSQL Database (sql-server
+Printing Support (printing
+Punjabi Support (punjabi-support
+Python (python-web
+RPM Development Tools (rpm-development-tools
+Robotics (robotics-suite
+Ruby (ruby
+Ruby on Rails (rubyonrails
+Russian Support (russian-support
+Sanskrit Support (sanskrit-support
+Santali Support (santali-support
+Security Lab (security-lab
+Server Configuration Tools (server-cfg
+Simplified Chinese Support (simplified-chinese-support
+Sindhi Support (sindhi-support
+Sinhala Support (sinhala-support
+Sound and Video (sound-and-video
+Standard (standard
+Sugar Desktop Environment (sugar-desktop
+System Tools (system-tools
+Tamil Support (tamil-support
+Telugu Support (telugu-support
+Text-based Internet (text-internet
+Thai Support (thai-support
+Tibetan Support (tibetan-support
+Tomcat (tomcat
+Traditional Chinese Support (traditional-chinese-support
+Urdu Support (urdu-support
+Vietnamese Support (vietnamese-support
+Virtualization (virtualization
+Window Managers (window-managers
+Windows File Server (smb-server
+X Software Development (x-software-development
+XMonad (xmonad
+XMonad for MATE (xmonad-mate
+Xfce (xfce-desktop
+Xfce Office (xfce-office
+Xfce Software Development (xfce-software-development
+Yiddish Support (yiddish-support
+base-x (base-x
+mate-compiz (mate-compiz
+3d-printing
+sugar-apps
+admin-tools
+anaconda-tools
+lxde-apps
+xfce-apps
+arabic-support
+assamese-support
+authoring-and-publishing
+basic-desktop
+web-server
+bengali-support
+bhutanese-support
+bodo-support
+books
+buildsys-build
+c-development
+cinnamon-desktop
+cloud-infrastructure
+core
+Applications) 
+Base) 
+GNOME) 
+KDE) 
+LXDE) 
+Xfce) 
+d-development
+dns-server
+design-suite
+development-libs
+development-tools
+dial-up
+directory-server
+dogri-support
+dogtag
+editors
+education
+electronic-lab
+engineering-and-scientific
+epiphany
+ethiopic-support
+gnome-games
+xfce-extra-plugins
+ftp-server
+eclipse
+fedora-packager
+finnish-support
+firefox
+font-design
+fonts
+freeipa-server
+gnome-desktop
+gnome-software-development
+games
+georgian-support
+graphical-internet
+graphics
+greek-support
+guest-agents
+guest-desktop-agents
+gujarati-support
+haproxy
+hardware-support
+haskell
+hebrew-support
+ha
+hindi-support
+input-methods
+jbossas
+japanese-support
+java
+java-development
+kde-desktop
+kde-apps
+kde-education
+kde-media
+kde-office
+kde-software-development
+kde-telepathy
+kannada-support
+kashmiri-support
+khmer-support
+konkani-support
+korean-support
+kurdish-support
+lxde-desktop
+lxde-office
+legacy-fonts
+legacy-network-server
+legacy-software-development
+legacy-software-support
+lepcha-support
+libreoffice
+libreoffice-development
+load-balancer
+mate-desktop
+mate-applications
+mail-server
+maithili-support
+malayalam-support
+manipuri-support
+marathi-support
+MySQL) Database 
+medical
+milkymist
+mingw32
+mongodb
+multimedia
+lxde-media
+xfce-media
+Burmese) Support 
+nepali-support
+network-server
+news-server
+ocaml
+office
+online-docs
+oriya-support
+php
+perl
+perl-web
+persian-support
+sql-server
+printing
+punjabi-support
+python-web
+rpm-development-tools
+robotics-suite
+ruby
+rubyonrails
+russian-support
+sanskrit-support
+santali-support
+security-lab
+server-cfg
+simplified-chinese-support
+sindhi-support
+sinhala-support
+sound-and-video
+standard
+sugar-desktop
+system-tools
+tamil-support
+telugu-support
+text-internet
+thai-support
+tibetan-support
+tomcat
+traditional-chinese-support
+urdu-support
+vietnamese-support
+virtualization
+window-managers
+smb-server
+x-software-development
+xmonad
+xmonad-mate
+xfce-desktop
+xfce-office
+xfce-software-development
+yiddish-support
+base-x
+mate-compiz
