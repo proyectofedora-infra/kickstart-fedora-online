@@ -23,7 +23,7 @@
 #  
 from flask.ext.wtf import Form
 from wtforms import TextField, BooleanField, RadioField , SelectField
-from wtforms.validators import Required
+from wtforms.validators import Required , optional
 import os , sys
 import subprocess
 import locale
@@ -43,7 +43,7 @@ class liveForm(Form):
         self.time_zone.choices=self.create_time_zone("app/static/timezones_list.txt")
         self.select_locale.choices=self.create_locale("app/static/locale.txt")
         self.select_kyemap.choices=self.create_keymap("app/static/teclado.txt")
-
+    
     def create_dicc(self):
         f=open("app/static/yum.txt","r")
         for value in f:

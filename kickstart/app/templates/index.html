@@ -40,8 +40,9 @@
 	<div class="jumbotron">
 	<div class="container-fluid">
 	<h2>Seleccione el entorno grafico</h2><br />
-	<form action="" method="post" name="login">
 	{% block content %}
+	<form action="" method="post" name="login">
+
 		{{form.hidden_tag()}}
 		<div class="container well">
 			<div class="col-xs-12 col-sm-4">
@@ -73,17 +74,16 @@
 						
 					</div>
 
-										
+												
 		<h2>Datos de configuracion</h2> <br /><br />
 		<div class="container well">
-
-		Zona horaria {{form.time_zone}} <br /><br />
-		Idioma predeterminado {{form.select_locale}}<br /><br />
-		teclado {{form.select_kyemap}}
-		
-
-		</div>			
-		
+			
+			Zona horaria {{form.time_zone}}&nbsp;
+			Idioma predeterminado {{form.select_locale}} &nbsp;
+			teclado {{form.select_kyemap}}
+			
+			
+		</div>	
 		<h2>Agregar grupos de paquetes extras</h2> <br /><br />
 		<div class="container well">
 			<div class="row">
@@ -98,7 +98,6 @@
 			</div>
 		</div>
 		<button type="submit"  class="btn btn-primary btn-lg">Generar</button><br />
-		<p><input type="submit" value="Sign In"></p>
 	</form>
 	{% endblock %}
 					</div>
