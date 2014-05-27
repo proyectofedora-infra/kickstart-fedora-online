@@ -29,21 +29,33 @@ import subprocess
 import locale
 
 class liveForm(Form):
-
+    
     time_zone = SelectField(u'Select time zone')
     select_locale=SelectField(u'Select locale')
     select_kyemap=SelectField(u'Select keymap')
     # en esta tupla cargo los valores de los groupid de fedora. y despues creo dianmicamente el checkbox desde
     # el html (pero deberian crearse desde aca)
     check=[]
-
+    chk_res={}
     def __init__(self,*args,**kwargs):
         super(liveForm,self).__init__(*args,**kwargs)
+
         self.create_dicc() # armo la lista de valores para el checkbox 
         self.time_zone.choices=self.create_time_zone("app/static/timezones_list.txt")
         self.select_locale.choices=self.create_locale("app/static/locale.txt")
         self.select_kyemap.choices=self.create_keymap("app/static/teclado.txt")
     
+    #~ def __new__(cls, **kwargs):
+        #~ CHOICES = [('yes', 'Yes'), ('no', 'No')]
+        #~ questions = ("Do you like peas?", "Do you like tea?", "Are you nice?")  
+        #~ for index, question in enumerate(questions):
+            #~ field_name = "question_{}".format(index)
+            #~ field = RadioField(question,
+                                  #~ validators=[Required()],
+                                  #~ choices=CHOICES)
+            #~ setattr(cls, field_name, field)
+            
+        #return super(liveForm, cls).__new__(cls, **kwargs)
     def create_dicc(self):
         f=open("app/static/yum.txt","r")
         for value in f:
@@ -52,6 +64,7 @@ class liveForm(Form):
             dat1=aux[1].strip(" ")
 
             self.check.append((dat0,dat1))
+            self.chk_res[dat0]=None
         f.close()
     
     def create_locale(self,FILE):
