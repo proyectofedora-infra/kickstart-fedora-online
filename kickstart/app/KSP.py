@@ -32,20 +32,20 @@ class KSP:
     def __init__ (self):
         """ Class initialiser """
         self.ksparser = KickstartParser(makeVersion())
-        self.ksparser.readKickstart("/usr/share/spin-kickstarts/fedora-livecd-desktop.ks")
+        
         
     def load(self,data):
         print data
+        if data=="terminal":
+            self.ksparser.readKickstart("/usr/share/spin-kickstarts/fedora-livecd-desktop.ks")
         
     def print_screen(self):
-        print self.ksparser.handler.__str__()
-
-        #~ print self.ksparser.handler.__str__()
+        return self.ksparser.handler.__str__()
         
     def add_pkg(self,data):
         print "pkg"
         try:
-            self.ksparser.handler.packages.packages.add(["@"+str(data)])
+            self.ksparser.handler.packages.add(["@"+str(data)])
             return True
         except Exception, ex:
             return False

@@ -10,7 +10,10 @@ def index():
     form = ksForm()
     if form.is_submitted():
         value_chk = request.form.get("sig")    
+        value_X = request.form.get("X")    
+
         if value_chk=="True":
+            KSparser.load(value_X)
             return redirect('/config')
     return render_template("index.html",form = form)
 
@@ -50,6 +53,13 @@ def grouplist():
             for v in form.chk_res.keys():
                 if form.chk_res[v]==True:
                     KSparser.add_pkg(v)
-            KSparser.print_screen()
+                    return redirect('/ks')
     return render_template("grouplist.html",form = form)
 
+@app.route('/ks')
+def ks():
+    value_chk_ini = request.form.get("ini")   
+    Txt=KSparser.print_screen()
+    if value_chk_ini=="True":
+        return redirect('/')
+    return render_template("ks.html",txt = Txt)
