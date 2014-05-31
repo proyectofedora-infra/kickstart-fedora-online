@@ -56,10 +56,14 @@ def grouplist():
                     return redirect('/ks')
     return render_template("grouplist.html",form = form)
 
-@app.route('/ks')
+@app.route('/ks', methods = ['GET', 'POST'])
 def ks():
-    value_chk_ini = request.form.get("ini")   
+    form = ksForm()
     Txt=KSparser.print_screen()
-    if value_chk_ini=="True":
-        return redirect('/')
-    return render_template("ks.html",txt = Txt)
+    value_chk_ini = request.form.get("ini")   
+    if form.is_submitted():
+        print "KS - submit"
+        if value_chk_ini=="True":
+            print "check_ks"
+            return redirect('/')
+    return render_template("ks.html",form = form, txt = Txt)

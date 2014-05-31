@@ -1,15 +1,16 @@
 {% extends "base.html" %}
 {% block content %}
-
-	
+		<form action="" method="post" name="login">
+		{{form.hidden_tag()}}
 		<h2>Resumen del archivo Ks generado</h2> <br /><br />
 		<div class="container well">
 			<div class="row">
-			
+			<textarea rows="4" cols="50">
 			{{txt}}
-			
+			</textarea>			
 			</div>
 		</div>
 		<button  name ="ini" value="True"  type="submit"  class="btn btn-primary btn-lg">Inicio</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 		<button name ="donwload" value="True" type="submit"  class="btn btn-primary btn-lg">Descargar</button><br />
+</form>
 {% endblock %}
