@@ -1,2 +1,4 @@
 Flask
 Flask-WTF
+urlgrabber
+git+https://git.fedorahosted.org/git/pykickstart.git
