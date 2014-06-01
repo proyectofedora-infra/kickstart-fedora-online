@@ -1,24 +1,24 @@
-from flask import render_template, flash, redirect, request
+from flask import render_template, flash, redirect, request, url_for
 from app import app
 from form import ksForm
 from KSP import KSP
 
 KSparser=KSP()
 
-@app.route('/', methods = ['GET', 'POST'])
+@app.route('/', methods=['GET', 'POST'])
 def index():
     form = ksForm()
     if form.is_submitted():
         value_chk = request.form.get("sig")    
         value_X = request.form.get("X")    
 
-        if value_chk=="True":
+        if value_chk is "True":
             KSparser.load(value_X)
-            return redirect('/config')
-    return render_template("index.html",form = form)
+            return redirect(url_for('config'))
+    return render_template("index.html", form=form)
 
 
-@app.route('/config', methods = ['GET', 'POST'])
+@app.route('/config', methods=['GET', 'POST'])
 def config():
     form = ksForm()
     if form.is_submitted():
@@ -27,43 +27,43 @@ def config():
         print form.select_kyemap.data
         value_chk = request.form.get("sig") 
         value_chk_atr = request.form.get("atr")    
-        if value_chk_atr=="True":
+        if value_chk_atr is "True":
             return redirect('/')
         if value_chk=="True":
-            return redirect('/grouplist')
+            return redirect(url_for('grouplist'))
 
-    return render_template("config.html",form = form)
+    return render_template("config.html", form=form)
 
 
-@app.route('/grouplist', methods = ['GET', 'POST'])
+@app.route('/grouplist', methods=['GET', 'POST'])
 def grouplist():
     form = ksForm()
     if form.is_submitted():
         value_chk_atr = request.form.get("atr")    
         value_chk_gen = request.form.get("gen")    
-        if value_chk_atr=="True":
-            return redirect('/config')
-        if value_chk_gen=="True":
-            a=0
-            chk=[]
+        if value_chk_atr is "True":
+            return redirect(url_for('config'))
+        if value_chk_gen is "True":
+            a = 0
+            chk = []
             for value in form.check:
                 value_chk = request.form.get(value[0])
-                if value_chk <> None:
-                    form.chk_res[value_chk]=True
+                if value_chk != None:
+                    form.chk_res[value_chk] = True
             for v in form.chk_res.keys():
-                if form.chk_res[v]==True:
+                if form.chk_res[v] is True:
                     KSparser.add_pkg(v)
-                    return redirect('/ks')
-    return render_template("grouplist.html",form = form)
+                    return redirect(url_for('ks'))
+    return render_template("grouplist.html", form=form)
 
-@app.route('/ks', methods = ['GET', 'POST'])
+@app.route('/ks', methods=['GET', 'POST'])
 def ks():
     form = ksForm()
     Txt=KSparser.print_screen()
     value_chk_ini = request.form.get("ini")   
     if form.is_submitted():
         print "KS - submit"
-        if value_chk_ini=="True":
+        if value_chk_ini is "True":
             print "check_ks"
             return redirect('/')
-    return render_template("ks.html",form = form, txt = Txt)
+    return render_template("ks.html", form=form, txt=Txt)
