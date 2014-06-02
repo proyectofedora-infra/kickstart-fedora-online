@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
-	<form action="" method="post" name="login">
-		{{form.hidden_tag()}}
+	<form action="{{ form_action }}" method="post" name="login">
+		{{ form.hidden_tag() }}
 		<h2>Datos de configuracion</h2> <br /><br />
 		<div class="container well">
 			
@@ -11,7 +11,7 @@
 			
 			
 </div>	
-		<button  name ="atr" value="True"  type="submit"  class="btn btn-primary btn-lg">atras</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<a class="btn btn-primary btn-lg" href="{{ url_for('index') }}">atras</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 		<button name ="sig" value="True" type="submit"  class="btn btn-primary btn-lg">Siguiente</button><br />
 	</form>
 {% endblock %}

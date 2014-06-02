@@ -1,14 +1,14 @@
 	{% extends "base.html" %}
 	{% block content %}
-	<h2>Seleccione el entorno grafico</h2><br />
-	<form action="" method="post" name="login">
+	<h2>Seleccione el entorno gráfico</h2><br />
+	<form action="{{ form_action }}" method="post" name="login">
 
 		{{form.hidden_tag()}}
 		<div class="container well">
 			<div class="col-xs-12 col-sm-4">
 			<input type="radio" name="X"
 				value="terminal" checked="checked">  
-				<img src="../static/image/terminal.png" width="60" height="60" /> Sin entorno grafico <br />
+				<img src="../static/image/terminal.png" width="60" height="60" /> Sin entorno gráfico <br />
 			</div>
 							<div class="col-xs-12 col-sm-4">
 							<input type="radio" name="X" 
@@ -36,7 +36,7 @@
 
 												
 
-		<button name ="sig" value="True" type="submit"  class="btn btn-primary btn-lg">Sguiente</button><br />
+		<button name ="sig" value="True" type="submit"  class="btn btn-primary btn-lg">Siguiente</button><br />
 
 
 	</form>
