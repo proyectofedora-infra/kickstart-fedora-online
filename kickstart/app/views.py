@@ -1,38 +1,35 @@
-from flask import render_template, flash, redirect, request, url_for
+from flask import render_template, flash, redirect, request, url_for, session
 from app import app
 from form import ksForm
 from KSP import KSP
 
-KSparser=KSP()
+KSparser = KSP()
+
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
     form = ksForm()
-    if form.is_submitted():
-        value_chk = request.form.get("sig")    
-        value_X = request.form.get("X")    
-
-        if value_chk is "True":
-            KSparser.load(value_X)
-            return redirect(url_for('config'))
-    return render_template("index.html", form=form)
+    form_action = url_for('index')
+    if request.method == 'POST' and form.validate_on_submit():
+        session['desktop_env'] = request.form['X']
+        KSparser.load(session['desktop_env'])
+        return redirect(url_for('config'))
+    return render_template("index.html", form_action=form_action,form=form)
 
 
 @app.route('/config', methods=['GET', 'POST'])
 def config():
     form = ksForm()
-    if form.is_submitted():
+    form_action = url_for('config')
+    if request.method == 'POST' and form.validate_on_submit():
+        session['time_zone'] = form.time_zone.data
+        session['select_locale'] = form.select_locale.data
+        session['select_keymap'] = form.select_kyemap.data
         print form.time_zone.data
         print form.select_locale.data
         print form.select_kyemap.data
-        value_chk = request.form.get("sig") 
-        value_chk_atr = request.form.get("atr")    
-        if value_chk_atr is "True":
-            return redirect('/')
-        if value_chk=="True":
-            return redirect(url_for('grouplist'))
-
-    return render_template("config.html", form=form)
+        return redirect(url_for('grouplist'))
+    return render_template("config.html", form_action=form_action, form=form)
 
 
 @app.route('/grouplist', methods=['GET', 'POST'])
