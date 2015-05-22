@@ -9,6 +9,7 @@ KSparser = KSP()
 @app.route('/', methods=['GET', 'POST'])
 def index():
     form = ksForm()
+    KSparser.start()
     form_action = url_for('index')
     if request.method == 'POST' and form.validate_on_submit():
         session['desktop_env'] = request.form['X']
@@ -21,13 +22,15 @@ def index():
 def config():
     form = ksForm()
     form_action = url_for('config')
-    if request.method == 'POST' and form.validate_on_submit():
+    if request.method == 'POST' and form.is_submitted():
         session['time_zone'] = form.time_zone.data
         session['select_locale'] = form.select_locale.data
         session['select_keymap'] = form.select_kyemap.data
-        print form.time_zone.data
-        print form.select_locale.data
-        print form.select_kyemap.data
+        k_time = form.time_zone.data
+        k_lang = form.select_locale.data
+        k_key = form.select_kyemap.data
+        #KSparser.lang_time_key(k_key,k_lang,k_time)
+
         return redirect(url_for('grouplist'))
     return render_template("config.html", form_action=form_action, form=form)
 
@@ -35,12 +38,15 @@ def config():
 @app.route('/grouplist', methods=['GET', 'POST'])
 def grouplist():
     form = ksForm()
-    if form.is_submitted():
+    form_action = url_for('grouplist')
+    if request.method == 'POST' and form.is_submitted():
         value_chk_atr = request.form.get("atr")    
         value_chk_gen = request.form.get("gen")    
-        if value_chk_atr is "True":
+        print value_chk_atr
+        if value_chk_atr == 'True':
+            print "-----------"
             return redirect(url_for('config'))
-        if value_chk_gen is "True":
+        if value_chk_gen == 'True':
             a = 0
             chk = []
             for value in form.check:
@@ -49,18 +55,26 @@ def grouplist():
                     form.chk_res[value_chk] = True
             for v in form.chk_res.keys():
                 if form.chk_res[v] is True:
-                    KSparser.add_pkg(v)
-                    return redirect(url_for('ks'))
-    return render_template("grouplist.html", form=form)
+                    KSparser.add_pkg(v.encode('ascii'))
+            return redirect(url_for('ks'))
+    return render_template("grouplist.html", form_action=form_action, form=form)
 
 @app.route('/ks', methods=['GET', 'POST'])
 def ks():
     form = ksForm()
+    archivo=open("pruebaks.ks","w")
     Txt=KSparser.print_screen()
+
+    ascii_txt=Txt.encode("ascii")
+    archivo.writelines(ascii_txt)
+    archivo.close()
     value_chk_ini = request.form.get("ini")   
     if form.is_submitted():
-        print "KS - submit"
-        if value_chk_ini is "True":
-            print "check_ks"
+        #print "KS - submit"
+        
+        #print value_chk_ini
+        if value_chk_ini == "True":
+            print request.form['ks']
+            #print "check_ks"
             return redirect('/')
-    return render_template("ks.html", form=form, txt=Txt)
+    return render_template("ks.html", form=form, txt=ascii_txt)

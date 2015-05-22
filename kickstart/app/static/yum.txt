@@ -1,163 +1,31 @@
-3d-printing # 3D printing software 
-sugar-apps # Additional activities for use with the Sugar Environment. 
-admin-tools # This group is a collection of graphical administration tools for the system, such as for managing user accounts and configuring system hardware. 
-anaconda-tools #  
-lxde-apps # A set of commonly used applications for the LXDE Desktop 
-xfce-apps # A set of commonly used applications for the Xfce Desktop 
-arabic-support #  
-assamese-support #  
-authoring-and-publishing # These tools allow you to create documents in the DocBook format and convert them into HTML, PDF, Postscript, and text. 
-basic-desktop # Basic X Window System with a choice of window manager. 
-web-server # These tools allow you to run a Web server on the system. 
-bengali-support #  
-bhutanese-support #  
-bodo-support #  
-books # Books and Guides for Fedora users and developers 
-buildsys-build #  
-c-development # These tools include core development tools such as automake, gcc and debuggers. 
-cinnamon-desktop # Cinnamon provides a desktop with a traditional layout, advanced features, easy to use, powerful and flexible. 
-cloud-infrastructure # Infrastructure packages for cloud computing. 
-core # Smallest possible installation 
-critical-path-apps # A set of applications that are considered critical path 
-critical-path-base # A set of packages that provide the shared platform for Critical Path functionality on all Fedora spins 
-critical-path-gnome # A set of packages that provide the Critical Path functionality for the GNOME desktop 
-critical-path-kde # A set of packages that provide the Critical Path functionality for the KDE desktop 
-critical-path-lxde # A set of packages that provide the Critical Path functionality for the LXDE desktop 
-critical-path-xfce # A set of packages that provide the Critical Path functionality for the Xfce desktop 
-d-development # These include development tools and lib such as ldc, geany-tag . 
-dns-server # This package group allows you to run a DNS name server (BIND) on the system. 
-design-suite # These packages are targeted towards professional designers related to graphics, web and animation 
-development-libs # The packages in this group are core libraries needed to develop applications. 
-development-tools # These tools include general development tools such as git and cvs. 
-dial-up #  
-directory-server # Machine and user identity servers. 
-dogri-support #  
-dogtag # Enterprise-class open source Certificate Authority 
-editors # Sometimes called text editors, these are programs that allow you to create and edit text files. This includes Emacs and Vi. 
-education # Educational software for learning 
-electronic-lab # Design and Simulation tools for hardware engineers 
-engineering-and-scientific # This group includes packages for performing mathematical and scientific computations and plotting, as well as unit conversion. 
-epiphany # Epiphany Web Browser for GNOME 
-ethiopic-support #  
-gnome-games # A variety of games for the GNOME Desktop 
-xfce-extra-plugins # Extend the functionality of the Xfce panel 
-ftp-server # These tools allow you to run an FTP server on the system. 
-eclipse # Integrated Development Environments based on Eclipse. 
-fedora-packager # Tools and Utilities needed by a Fedora Packager 
-finnish-support #  
-firefox # The Firefox web browser 
-font-design # This group is a collection of tools used in the design, modification, manipulation, and packaging of fonts. 
-fonts # Fonts packages for rendering text on the desktop. 
-freeipa-server # Provides central directory services for identity, policy management and auditing. 
-gnome-desktop # GNOME is a highly intuitive and user friendly desktop environment. 
-gnome-software-development # Install these packages in order to develop GTK+ and GNOME graphical applications. 
-games # Various ways to relax and spend your free time. 
-georgian-support #  
-graphical-internet # This group includes graphical email, Web, and chat clients. 
-graphics # This group includes packages to help you manipulate and scan images. 
-greek-support #  
-guest-agents # Agents used when running under a hypervisor. 
-guest-desktop-agents # Agents used when running as a virtualized desktop. 
-gujarati-support #  
-haproxy # TCP/HTTP Load Balancer. 
-hardware-support # This group is a collection of tools for various hardware specific utilities. 
-haskell # Support for developing programs in the Haskell programming language. 
-hebrew-support #  
-ha # Infrastructure for highly available services and/or shared storage. 
-hindi-support #  
-input-methods # Input method packages for the input of international text. 
-jbossas # Java application server. 
-japanese-support #  
-java # Support for running programs written in the Java programming language. 
-java-development # Support for developing programs in the Java programming language. 
-kde-desktop # The KDE Plasma Workspaces, a highly-configurable graphical user interface which includes a panel, desktop, system icons and desktop widgets, and many powerful KDE applications. 
-kde-apps # A set of commonly used KDE applications 
-kde-education # KDE Educational applications 
-kde-media # Multimedia support for KDE 
-kde-office # KDE Office applications 
-kde-software-development # Install these packages to develop QT and KDE graphical applications. 
-kde-telepathy # KDE Telepathy applications 
-kannada-support #  
-kashmiri-support #  
-khmer-support #  
-konkani-support #  
-korean-support #  
-kurdish-support #  
-lxde-desktop # LXDE is a lightweight X11 desktop environment designed for computers with low hardware specifications like netbooks, mobile devices or older computers. 
-lxde-office # Office suite for LXDE 
-legacy-fonts # Older bitmap and vector fonts packages 
-legacy-network-server # These packages include servers for old network protocols such as rsh and telnet. 
-legacy-software-development # These packages provide compatibility with previous releases. 
-legacy-software-support #  
-lepcha-support #  
-libreoffice # LibreOffice Productivity Suite 
-libreoffice-development # These packages are helpful when developing LibreOffice extensions or macros. 
-load-balancer # Load balancing support for network traffic 
-mate-desktop # MATE Desktop is based on GNOME 2 and provides a powerful graphical user interface for users who seek a simple easy to use traditional desktop interface. 
-mate-applications # Applications for the MATE Desktop. 
-mail-server # These packages allow you to configure an IMAP or SMTP mail server. 
-maithili-support #  
-malayalam-support #  
-manipuri-support #  
-marathi-support #  
-mysql # This package group contains packages useful for use with MariaDB (MySQL). 
-medical # This is a group of applications related to health care. 
-milkymist # Toolchain for Milkymist hardware engineers. 
-mingw32 # Support for cross-compiling programs to 32 bit Windows targets, testing them, and building installers, all from within Fedora. 
-mongodb # Scalable high-performance NoSQL database. 
-multimedia # Audio/video framework common to desktops 
-lxde-media # Multimedia support for LXDE 
-xfce-media # Multimedia support for Xfce 
-burmese-support #  
-nepali-support #  
-network-server # These packages include network-based servers such as DHCP, Kerberos and NIS. 
-news-server # This group allows you to configure the system as a news server. 
-ocaml # Support for developing software using the Objective CAML programming language and libraries. 
-office # The applications include office suites, PDF viewers, and more. 
-online-docs #  
-oriya-support #  
-php # General-purpose web development scripting language. 
-perl # Support for developing programs in the Perl programming language. 
-perl-web # Basic Perl web application support. 
-persian-support #  
-sql-server # This package group includes packages useful for use with Postgresql. 
-printing # Install these tools to enable the system to print or act as a print server. 
-punjabi-support #  
-python-web # Basic Python web application support. 
-rpm-development-tools # These tools include core development tools such rpmbuild. 
-robotics-suite # Suite of packages for robotics development 
-ruby # Basic support for the Ruby programming language. 
-rubyonrails # Ruby on Rails web application stack. 
-russian-support #  
-sanskrit-support #  
-santali-support #  
-security-lab # Tools for security auditing, forensics, system rescue, and teaching security testing methodologies. 
-server-cfg # This group contains all of Red Hat's custom server configuration tools. 
-simplified-chinese-support #  
-sindhi-support #  
-sinhala-support #  
-sound-and-video # From CD recording to playing audio CDs and multimedia files, this package group allows you to work with sound and video on the system. 
-standard # Common set of utilities that extend the minimal installation. 
-sugar-desktop # A software playground for learning about learning. 
-system-tools # This group is a collection of various tools for the system, such as the client for connecting to SMB shares and tools to monitor network traffic. 
-tamil-support #  
-telugu-support #  
-text-internet # This group includes text-based email, Web, and chat clients. These applications do not require the X Window System. 
-thai-support #  
-tibetan-support #  
-tomcat # Tomcat web application server. 
-traditional-chinese-support #  
-urdu-support #  
-vietnamese-support #  
-virtualization # These packages provide a virtualization environment. 
-window-managers # Simple window managers that aren't part of a larger desktop environment. 
-smb-server # This package group allows you to share files between Linux and MS Windows(tm) systems. 
-x-software-development # These packages allow you to develop applications for the X Window System. 
-xmonad # A tiling window manager 
-xmonad-mate # XMonad window manager with MATE 
-xfce-desktop # A lightweight desktop environment that works well on low end machines. 
-xfce-office # Office suite for Xfce 
-xfce-software-development # Install these packages in order to develop GTK+ and Xfce graphical applications. 
-yiddish-support #  
-base-x # Local X.org display server 
-mate-compiz # This package group adds Compiz and Emerald to MATE desktop 
+development-tools # These tools include general development tools such as git and cvs.
+electronic-lab # Design and Simulation tools for hardware engineers
+libreoffice # LibreOffice Productivity Suite
+3d-printing # 3D printing software
+admin-tools # This group is a collection of graphical administration tools for the system, such as for managing user accounts and configuring system hardware.
+audio # Various tools for audio synthesis and music production.
+authoring-and-publishing # These tools allow you to create documents in the DocBook format and convert them into HTML, PDF, Postscript, and text.
+books # Books and Guides for Fedora users and developers
+c-development # These tools include core development tools such as automake, gcc and debuggers.
+chromium # The Chromium web browser
+cloud-infrastructure # Infrastructure packages for cloud computing.
+d-development # These include development tools and lib such as ldc, geany-tag .
+design-suite # These packages are targeted towards professional designers related to graphics, web and animation
+editors # Sometimes called text editors, these are programs that allow you to create and edit text files. This includes Emacs and Vi.
+education # Educational software for learning
+engineering-and-scientific # This group includes packages for performing mathematical and scientific computations and plotting, as well as unit conversion.
+eclipse # Integrated Development Environments based on Eclipse.
+freeipa-server # Provides central directory services for identity, policy management and auditing.
+games # Various ways to relax and spend your free time.
+medical # This is a group of applications related to health care.
+milkymist # Toolchain for Milkymist hardware engineers.
+network-server # These packages include network-based servers such as DHCP, Kerberos and NIS.
+office # The applications include office suites, PDF viewers, and more.
+opera # The Opera web browser
+rpm-development-tools # These tools include core development tools such rpmbuild.
+robotics-suite # Suite of packages for robotics development
+security-lab # Tools for security auditing, forensics, system rescue, and teaching security testing methodologies.
+sound-and-video # From CD recording to playing audio CDs and multimedia files, this package group allows you to work with sound and video on the system.
+system-tools # This group is a collection of various tools for the system, such as the client for connecting to SMB shares and tools to monitor network traffic.
+text-internet # This group includes text-based email, Web, and chat clients. These applications do not require the X Window System.
+window-managers # Simple window managers that aren't part of a larger desktop environment.

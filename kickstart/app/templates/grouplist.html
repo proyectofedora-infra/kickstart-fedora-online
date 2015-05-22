@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-	<form action="" method="post" name="login">
+	<form action="{{ form_action }}" method="post" name="login">
 		{{form.hidden_tag()}}
 	
 		<h2>Agregar grupos de paquetes extras</h2> <br /><br />

@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-# -*- coding: utf-8 -*-
 #
 #  KSP.py
 #  
@@ -31,16 +30,22 @@ class KSP:
     
     def __init__ (self):
         """ Class initialiser """
+#        self.ksparser = KickstartParser(makeVersion())
+
+        
+    def start(self):
         self.ksparser = KickstartParser(makeVersion())
-        
-        
+
     def load(self,data):
         print data
         if data=="terminal":
+            self.ksparser.readKickstart("/usr/share/spin-kickstarts/fedora-live-minimization.ks")
+        if data=="gnome":
             self.ksparser.readKickstart("/usr/share/spin-kickstarts/fedora-livecd-desktop.ks")
-        
+
     def print_screen(self):
-        return self.ksparser.handler.__str__()
+        #print type(self.ksparser.handler.__str__())
+        return self.ksparser.handler.__str__().decode("ascii")
         
     def add_pkg(self,data):
         print "pkg"
@@ -49,5 +54,10 @@ class KSP:
             return True
         except Exception, ex:
             return False
-
+    def lang_time_key(self,key,lang,time):
+        """docstring for lang_time_key"""
+        self.ksparser.handler.keyboard.keyboard=key
+        self.ksparser.handler.lang.lang=lang
+        self.ksparser.handler.timezone.timezone=time
+        return True
 
