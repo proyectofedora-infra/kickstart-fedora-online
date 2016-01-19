@@ -49,3 +49,6 @@ nosetests.xml
 # Temp 
 *~
 *.*~
+
+# vim
+*.swp
