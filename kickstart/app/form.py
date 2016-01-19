@@ -26,21 +26,22 @@ from wtforms.validators import Required , Optional
 import os , sys
 import subprocess
 import locale
-
+import json
 class ksForm(Form):
     check=[]
     chk_res={}
+    check_group=[]
     time_zone = SelectField(u'Select time zone',validators = [Optional()])
     select_locale=SelectField(u'Select locale',validators = [Optional()])
     select_kyemap=SelectField(u'Select keymap',validators = [Optional()])
-    
+    #tegno que crear un dicc para el keyboard, timezone, y lang
     def __init__(self,*args,**kwargs):
         super(ksForm,self).__init__(*args,**kwargs)
         self.check=self.create_dicc() # armo la lista de valores para el checkbox 
-        self.time_zone.choices=self.create_time_zone("app/static/timezones_list.txt")
-        self.select_locale.choices=self.create_locale("app/static/locale.txt")
-        self.select_kyemap.choices=self.create_keymap("app/static/teclado.txt")
-        
+        self.time_zone.choices=self.create_time_zone("app/dat/timezones_list.txt")
+        self.select_locale.choices=self.create_locale("app/dat/locale.txt")
+        self.select_kyemap.choices=self.create_keymap("app/dat/teclado.txt")
+        self.check_group=self.create_group_list()
     def create_locale(self,FILE):
         """ Function doc """
         list_loc=[]
@@ -68,16 +69,32 @@ class ksForm(Form):
         
     def create_dicc(self):
         internal_check=[]
-        f=open("app/static/yum.txt","r")
-        for value in f:
-            aux=value.split("#")
-            dat0=aux[0].strip(" ")
-            dat1=aux[1].strip(" ")
+        file_json=open("app/dat/groups.json","r")
+        json_dat=json.load(file_json)
+        #print json_dat 
+        #json_key=json_dat.keys()
+        #json_key.sort()
+        #for key in json_key:
+        #    key_low=key.lower()
+        #    list_grp=[]
+        #    dic_grp_info={}
+        #    for dato_grp in json_dat[key]:
+        #        dic_grp_info[dato_grp]="soy un tool tip"
+        #        list_grp.append(dic_grp_info)
+                
+        #    internal_check.append([key_low.replace(" ","-"), dic_grp_info ])
+             
+        return json_dat 
+    def create_group_list(self):
+        """
 
-            internal_check.append((dat0,dat1))
-            self.chk_res[dat0]=None
-        f.close()
-        internal_check.sort()
-        return internal_check
+        """
+        internal_grp_list=[]
+        for category_dic in  self.check:
+            for grp_dicc in self.check[category_dic]:
+                for grp_dicc_aux in grp_dicc:
+                    internal_grp_list.append(grp_dicc_aux)
+        print internal_grp_list
+        return internal_grp_list
 
 

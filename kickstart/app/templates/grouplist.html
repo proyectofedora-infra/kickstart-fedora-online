@@ -1,22 +1,49 @@
-{% extends "base.html" %}
-{% block content %}
-	<form action="{{ form_action }}" method="post" name="login">
+<!DOCTYPE html>
+
+
+  	{% extends "base.html" %}
+	{% block content %}
+		<form action="{{ form_action }}" method="post" name="login">
 		{{form.hidden_tag()}}
-	
-		<h2>Agregar grupos de paquetes extras</h2> <br /><br />
-		<div class="container well">
-			<div class="row">
-			{% for value_form in form.check%}
-				<div class="col-xs-12 col-sm-4">
-					<input type="checkbox" 
-					name={{value_form[0]}} value="{{value_form[0]}}" 
-					rel="tooltip" title="{{value_form[1]}}"
-					/> {{value_form[0]}}
-				</div>
-			{%endfor%}
-			</div>
-		</div>
-		<button  name ="atr" value="True"  type="submit"  class="btn btn-primary btn-lg">atras</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-		<button name ="gen" value="True" type="submit"  class="btn btn-primary btn-lg">Generar</button><br />
+		
+
+<div class="container">
+  	<h2>grupos de programas</h2>
+		{% for value_form,key_form in form.check.iteritems()%}   
+  		<div class="panel-group">
+    	<div class="panel panel-default">
+      <div class="panel-heading">
+      <h4 class="panel-title">
+      <IMG SRC="./static/image/comps/{{value_form}}.png">
+      <a data-toggle="collapse" href="#{{value_form}}"> {{value_form}}</a>
+      </h4>      		      
+      </div>
+
+       <div id="{{value_form}}" class="panel-collapse collapse">
+      	<ul class="list-group">
+				{%for key_form_item in key_form%}
+				{% for value,key  in key_form_item.iteritems() %}   		
+      		<li class="list-group-item">
+      		<label><input type="checkbox" name="{{value}}" value="{{value}}" rel="{{key}}" title="{{key}}"/> {{value}}</label>
+				</li>
+      	</ul>
+				{%endfor%}
+				{%endfor%}				
+      </div>
+
+
+    </div>
+  {%endfor%}
+  </div>
+
+</div>
+
+
+  <script src="./static/jquery/dist/jquery.min.js"></script>
+  <script src="./static/js/bootstrap.min.js"></script> 
+  
+  <button  name ="atr" value="True"  type="submit"  class="btn btn-primary btn-lg">atras</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <button name ="gen" value="True" type="submit"  class="btn btn-primary btn-lg">Generar</button><br />
 	</form>
-{% endblock %}
+
+	{% endblock %}

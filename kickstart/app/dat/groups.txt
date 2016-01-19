@@ -1,0 +1,31 @@
+development-tools # These tools include general development tools such as git and cvs.
+electronic-lab # Design and Simulation tools for hardware engineers
+libreoffice # LibreOffice Productivity Suite
+3d-printing # 3D printing software
+admin-tools # This group is a collection of graphical administration tools for the system, such as for managing user accounts and configuring system hardware.
+audio # Various tools for audio synthesis and music production.
+authoring-and-publishing # These tools allow you to create documents in the DocBook format and convert them into HTML, PDF, Postscript, and text.
+books # Books and Guides for Fedora users and developers
+c-development # These tools include core development tools such as automake, gcc and debuggers.
+chromium # The Chromium web browser
+cloud-infrastructure # Infrastructure packages for cloud computing.
+d-development # These include development tools and lib such as ldc, geany-tag .
+design-suite # These packages are targeted towards professional designers related to graphics, web and animation
+editors # Sometimes called text editors, these are programs that allow you to create and edit text files. This includes Emacs and Vi.
+education # Educational software for learning
+engineering-and-scientific # This group includes packages for performing mathematical and scientific computations and plotting, as well as unit conversion.
+eclipse # Integrated Development Environments based on Eclipse.
+freeipa-server # Provides central directory services for identity, policy management and auditing.
+games # Various ways to relax and spend your free time.
+medical # This is a group of applications related to health care.
+milkymist # Toolchain for Milkymist hardware engineers.
+network-server # These packages include network-based servers such as DHCP, Kerberos and NIS.
+office # The applications include office suites, PDF viewers, and more.
+opera # The Opera web browser
+rpm-development-tools # These tools include core development tools such rpmbuild.
+robotics-suite # Suite of packages for robotics development
+security-lab # Tools for security auditing, forensics, system rescue, and teaching security testing methodologies.
+sound-and-video # From CD recording to playing audio CDs and multimedia files, this package group allows you to work with sound and video on the system.
+system-tools # This group is a collection of various tools for the system, such as the client for connecting to SMB shares and tools to monitor network traffic.
+text-internet # This group includes text-based email, Web, and chat clients. These applications do not require the X Window System.
+window-managers # Simple window managers that aren't part of a larger desktop environment.
