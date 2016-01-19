@@ -39,10 +39,15 @@ class KSP:
     def load(self,data):
         print data
         if data=="terminal":
-            self.ksparser.readKickstart("/usr/share/spin-kickstarts/fedora-live-minimization.ks")
+            self.ksparser.readKickstart("ks/fedora-live-base.ks")
         if data=="gnome":
-            self.ksparser.readKickstart("/usr/share/spin-kickstarts/fedora-livecd-desktop.ks")
-
+            self.ksparser.readKickstart("ks/fedora-live-workstation.ks")
+        if data=="kde":
+            self.ksparser.readKickstart("ks/fedora-live-kde.ks")
+        if data=="xfce":
+            self.ksparser.readKickstart("ks/fedora-live-xfce.ks")
+        if data=="lxde":
+            self.ksparser.readKickstart("ks/fedora-live-lxde.ks")
     def print_screen(self):
         #print type(self.ksparser.handler.__str__())
         return self.ksparser.handler.__str__().decode("ascii")
