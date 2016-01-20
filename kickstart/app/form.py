@@ -30,26 +30,42 @@ import json
 class ksForm(Form):
     check=[]
     chk_res={}
+    dicc_locale={}
     check_group=[]
     time_zone = SelectField(u'Select time zone',validators = [Optional()])
     select_locale=SelectField(u'Select locale',validators = [Optional()])
     select_kyemap=SelectField(u'Select keymap',validators = [Optional()])
-    #tegno que crear un dicc para el keyboard, timezone, y lang
+        #tegno que crear un dicc para el keyboard, timezone, y lang
     def __init__(self,*args,**kwargs):
         super(ksForm,self).__init__(*args,**kwargs)
         self.check=self.create_dicc() # armo la lista de valores para el checkbox 
         self.time_zone.choices=self.create_time_zone("app/dat/timezones_list.txt")
-        self.select_locale.choices=self.create_locale("app/dat/locale.txt")
+        self.select_locale.choices=self.create_locale("app/dat/locale.json")
         self.select_kyemap.choices=self.create_keymap("app/dat/teclado.txt")
         self.check_group=self.create_group_list()
+        self.dicc_locale=self.locale_dicc("app/dat/locale.json")
+
+    def locale_dicc(self,FILE):
+        dicc={}
+        json_f=open(FILE,'r')
+        dicc=json.load(json_f)
+        return dicc
     def create_locale(self,FILE):
         """ Function doc """
-        list_loc=[]
-        f=open(FILE,"r")
-        for value in f:
-            aux=value.split("16")
-            list_loc.append((aux[1].decode('utf-8'),aux[1].decode('utf-8'))) 
-        return list_loc
+        dicc_loc={}
+        lis_dicc=[]
+        file_json=open(FILE,"r")
+        #for value in f:
+        #    aux=value.split("16")
+        #    list_loc.append((aux[1].decode('utf-8'),aux[1].decode('utf-8'))) 
+        dicc_loc=json.load(file_json)
+        for dicc_key in dicc_loc:
+            lis_dicc.append((dicc_loc[dicc_key],dicc_key))
+        order_list= sorted(lis_dicc,key=lambda value: value[1])
+        #print order_list
+
+        return order_list 
+
             
     def create_keymap (self,FILE):
         """ Function doc """
@@ -94,7 +110,7 @@ class ksForm(Form):
             for grp_dicc in self.check[category_dic]:
                 for grp_dicc_aux in grp_dicc:
                     internal_grp_list.append(grp_dicc_aux)
-        print internal_grp_list
+        #print internal_grp_list
         return internal_grp_list
 
 

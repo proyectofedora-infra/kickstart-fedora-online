@@ -56,16 +56,17 @@ def config():
     form = ksForm()
     form_action = url_for('config')
     if request.method == 'POST' and form.is_submitted():
-        session['time_zone'] = form.time_zone.data
-        session['select_locale'] = form.select_locale.data
-        session['select_keymap'] = form.select_kyemap.data
+        #session['time_zone'] = form.time_zone.data
+        #session['select_locale'] = form.select_locale.data
+        #session['select_keymap'] = form.select_kyemap.data
+        #print dir(form.time_zone)
+        #print form.time_zone.data
         k_time = form.time_zone.data
         k_lang = form.select_locale.data
         k_key = form.select_kyemap.data
-        # tengo que hacer un diccionario para resolver el teclado y el lang
-        # porque el .txt tiene mas info de la que corresponde
-        #KSparser.lang_time_key(k_key,k_lang,k_time)
-
+        #print form.dicc_locale.keys()
+        print k_lang
+        KSparser.lang_time_key(k_key.strip("\r\n"),k_lang,k_time)
         return redirect(url_for('grouplist'))
     return render_template("config.html", form_action=form_action, form=form)
 

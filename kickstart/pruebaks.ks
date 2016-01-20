@@ -2,15 +2,16 @@
 # X Window System configuration information
 xconfig  --startxonboot
 # Keyboard layouts
-keyboard 'us'
+keyboard 'ANSI-dvorak'
 # System language
-lang en_US.UTF-8
+lang af_ZA
 # Firewall configuration
 firewall --enabled --service=mdns
 repo --name="fedora" --mirrorlist=http://mirrors.fedoraproject.org/metalink?repo=fedora-$releasever&arch=$basearch
 repo --name="updates" --mirrorlist=http://mirrors.fedoraproject.org/metalink?repo=updates-released-f$releasever&arch=$basearch
 # System timezone
-timezone US/Eastern
+timezone Africa/Abidjan
+
 # System authorization information
 auth --useshadow --passalgo=sha512
 # SELinux configuration
@@ -305,58 +306,6 @@ if [ "$(uname -i)" = "i386" -o "$(uname -i)" = "x86_64" ]; then
 fi
 %end
 
-%post
-# LXDE and LXDM configuration
-
-# create /etc/sysconfig/desktop (needed for installation)
-cat > /etc/sysconfig/desktop <<EOF
-PREFERRED=/usr/bin/startlxde
-DISPLAYMANAGER=/usr/sbin/lxdm
-EOF
-
-cat >> /etc/rc.d/init.d/livesys << EOF
-# disable screensaver locking and make sure gamin gets started
-cat > /etc/xdg/lxsession/LXDE/autostart << FOE
-/usr/libexec/gam_server
-@lxpanel --profile LXDE
-@pcmanfm --desktop --profile LXDE
-/usr/libexec/notification-daemon
-FOE
-
-# set up preferred apps 
-cat > /etc/xdg/libfm/pref-apps.conf << FOE 
-[Preferred Applications]
-WebBrowser=firefox.desktop
-MailClient=sylpheed.desktop
-FOE
-
-# set up auto-login for liveuser
-sed -i 's/# autologin=.*/autologin=liveuser/g' /etc/lxdm/lxdm.conf
-
-# Show harddisk install on the desktop
-sed -i -e 's/NoDisplay=true/NoDisplay=false/' /usr/share/applications/liveinst.desktop
-mkdir /home/liveuser/Desktop
-cp /usr/share/applications/liveinst.desktop /home/liveuser/Desktop
-
-# create default config for clipit, otherwise it displays a dialog on startup
-mkdir -p /home/liveuser/.config/clipit
-cat > /home/liveuser/.config/clipit/clipitrc  << FOE
-[rc]
-use_copy=true
-save_uris=true
-save_history=false
-statics_show=true
-single_line=true
-FOE
-
-# this goes at the end after all other changes.
-chown -R liveuser:liveuser /home/liveuser
-restorecon -R /home/liveuser
-
-EOF
-
-%end
-
 %packages
 @anaconda-tools
 @base-x
@@ -367,12 +316,7 @@ EOF
 @guest-desktop-agents
 @hardware-support
 @input-methods
-@lxde-apps
-@lxde-desktop
-@lxde-media
-@lxde-office
 @multimedia
-@networkmanager-submodules
 @printing
 @standard
 aajohan-comfortaa-fonts
@@ -380,38 +324,5 @@ anaconda
 dracut-live
 kernel
 memtest86+
-metacity
-midori
-notification-daemon
--PackageKit*
--acpid
--autofs
--coolkey
--desktop-backgrounds-basic
--foomatic
--foomatic-db-ppds
--fprintd-pam
--gimp-help
--gnome-disk-utility
--hpijs
--hplip
--ibus-typing-booster
--isdn4k-utils
--mpage
--numactl
--policycoreutils-gui
--polkit-gnome
--polkit-kde
--realmd
--sane-backends
--sox
--stix-fonts
--system-config-network
--system-config-rootpassword
--wget
--xfce4-notifyd
--xsane
--xsane-gimp
--xscreensaver-extras
 
 %end
